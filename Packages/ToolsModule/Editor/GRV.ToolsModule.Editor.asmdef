@@ -1,0 +1,19 @@
+{
+    "name": "GRV.ToolsModule.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:edd8c73c663ffdd4bb7c64cfb501a3cd",
+        "GUID:fad2e15869042114f88ba73d6fe5c542"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,17 @@
+﻿{
+  "name": "com.grv.tools-module",
+  "displayName": "Tools Module",
+  "description": "This package it my Tools.",
+  "version": "1.1.0",
+  "unity": "2019.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hadjime/ToolsModule.git"
+  },
+  "author": "GRV <GavrilovRoman@inbox.ru> (https://github.com/Hadjime)",
+  "dependencies": {},
+  "keywords": [
+    "Some my tools"
+  ]
+}
