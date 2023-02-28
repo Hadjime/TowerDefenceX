@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using InternalAssets.Scripts.Enemies;
 using InternalAssets.Scripts.Infrastructure.AssetManagement;
 using InternalAssets.Scripts.StaticData;
-using Zenject;
 
 namespace InternalAssets.Scripts.Infrastructure.Services.StaticData
 {
@@ -40,19 +40,15 @@ namespace InternalAssets.Scripts.Infrastructure.Services.StaticData
 
 		private async Task LoadMonstersData()
 		{
-			_assets.LoadAllAsyncByLabel<MonstersStaticData>(MonstersLabel, onFinish: list =>
-			{
-				list.ForEach(data => _monsters[data.MonsterType] = data);
-				int monstersCount = _monsters.Count;
-			});
+			List<MonstersStaticData> loadAllAsyncByLabel = await _assets.LoadAllAsyncByLabel<MonstersStaticData>(MonstersLabel);
+			loadAllAsyncByLabel.ToDictionary(data => _monsters[data.MonsterType] = data);
+			int monstersCount = _monsters.Count;
 		}
 		private async Task LoadLevelsData()
 		{
-			_assets.LoadAllAsyncByLabel<LevelStaticData>(LevelsLabel, onFinish: list =>
-			{
-				list.ForEach(data => _levels[data.NumberLevel] = data);
-				int levelsCount = _levels.Count;
-			});
+			List<LevelStaticData> loadAllAsyncByLabel = await _assets.LoadAllAsyncByLabel<LevelStaticData>(LevelsLabel);
+			loadAllAsyncByLabel.ToDictionary(data => _levels[data.NumberLevel] = data);
+			int levelsCount = _levels.Count;
 		}
 	}
 }
